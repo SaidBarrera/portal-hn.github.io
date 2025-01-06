@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Empleador - Portal de Empleos</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../../styles/components/reset.css">
+    <link rel="stylesheet" href="../../styles/components/variables.css">
+    <link rel="stylesheet" href="../../styles/components/typography.css">
+    <link rel="stylesheet" href="../../styles/components/buttons.css">
+    <link rel="stylesheet" href="../../styles/components/forms.css">
+    <link rel="stylesheet" href="../../styles/pages/dashboard.css">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    <img src="../../assets/images/logo.svg" alt="Portal Empleos">
+                </a>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="../../assets/images/default-avatar.png" alt="Avatar" id="userAvatar">
+                </div>
+                <div class="user-details">
+                    <h4 id="userName">Nombre del Empleador</h4>
+                    <span id="companyName">Nombre de la Empresa</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#overview" class="nav-link active" data-section="overview">
+                            <i class="fas fa-th-large"></i>
+                            <span>Vista General</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#jobs" class="nav-link" data-section="jobs">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Empleos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#candidates" class="nav-link" data-section="candidates">
+                            <i class="fas fa-users"></i>
+                            <span>Candidatos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#interviews" class="nav-link" data-section="interviews">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Entrevistas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messages" class="nav-link" data-section="messages">
+                            <i class="fas fa-envelope"></i>
+                            <span>Mensajes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#analytics" class="nav-link" data-section="analytics">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analíticas</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sidebar-footer">
+                    <a href="#settings" class="nav-link" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </a>
+                    <button id="logoutBtn" class="nav-link logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar Sesión</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar...">
+                </div>
+
+                <div class="top-bar-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <div class="quick-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Publicar Empleo
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Overview Section -->
+                <section id="overview" class="dashboard-section active">
+                    <div class="section-header">
+                        <h1>Vista General</h1>
+                        <div class="date-filter">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-calendar"></i>
+                                Últimos 30 días
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Empleos Activos</h3>
+                                <p class="stat-value">12</p>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    8% vs mes anterior
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Postulaciones</h3>
+                                <p class="stat-value">148</p>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    12% vs mes anterior
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Entrevistas Pendientes</h3>
+                                <p class="stat-value">8</p>
+                                <span class="stat-change negative">
+                                    <i class="fas fa-arrow-down"></i>
+                                    3% vs mes anterior
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Contrataciones</h3>
+                                <p class="stat-value">5</p>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    25% vs mes anterior
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Actividad Reciente</h2>
+                            <button class="btn btn-text">Ver todo</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <!-- Activity items will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections will be shown/hidden via JavaScript -->
+                <section id="jobs" class="dashboard-section">
+                    <!-- Jobs content -->
+                </section>
+
+                <section id="candidates" class="dashboard-section">
+                    <!-- Candidates content -->
+                </section>
+
+                <!-- More sections... -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="newJobModal" class="modal">
+        <!-- Modal content -->
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <script type="module" src="../../js/pages/employer-dashboard.js"></script>
+</body>
+</html>

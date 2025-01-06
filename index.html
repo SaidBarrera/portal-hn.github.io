@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portal de Empleos - Encuentra tu próximo trabajo o talento</title>
+
+        <!-- Estilos base -->
+        <link rel="stylesheet" href="styles/components/reset.css">
+        <link rel="stylesheet" href="styles/components/variables.css">
+
+        <!-- Componentes -->
+        <link rel="stylesheet" href="styles/components/typography.css">
+        <link rel="stylesheet" href="styles/components/buttons.css">
+        <link rel="stylesheet" href="styles/components/forms.css">
+        <link rel="stylesheet" href="styles/components/cards.css">
+        <link rel="stylesheet" href="styles/components/categories.css">
+        <link rel="stylesheet" href="styles/components/cta.css">
+        <link rel="stylesheet" href="styles/components/footer.css">
+        <!-- Estilos principales -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/pages/landing.css">
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <!-- Barra de navegación -->
+    <header class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <img src="assets/images/logo.svg" alt="Portal Empleos Logo">
+                </a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar empleos, empresas...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <a href="/pages/login.html" class="btn btn-outline-primary">Iniciar Sesión</a>
+                <a href="/pages/register.html" class="btn btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+     <!-- Hero Section -->
+     <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Encuentra tu próxima oportunidad profesional</h1>
+                <p>Conectamos el talento con las mejores empresas</p>
+                <div class="hero-actions">
+                    <a href="pages/register.html?type=applicant" class="btn btn-primary btn-lg">
+                        Buscar Empleo
+                    </a>
+                    <a href="pages/register.html?type=employer" class="btn btn-secondary btn-lg">
+                        Publicar Empleo
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">10,000+</span>
+                        <span class="stat-label">Empleos activos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">5,000+</span>
+                        <span class="stat-label">Empresas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">50,000+</span>
+                        <span class="stat-label">Profesionales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="featured-jobs">
+        <div class="container">
+            <h2>Empleos Destacados</h2>
+            <div class="jobs-grid" id="featuredJobs">
+                <!-- Se llenará dinámicamente -->
+            </div>
+            <div class="section-footer">
+                <a href="pages/jobs.html" class="btn btn-outline">Ver todos los empleos</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Categories Section -->
+<section class="categories">
+    <div class="container">
+        <div class="categories-header">
+            <h2>Explora por Categorías</h2>
+        </div>
+        
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="category-content">
+                    <h3>Tecnología</h3>
+                    <p>Desarrollo, IT, Software</p>
+                    <span class="category-stats">1,200+ empleos</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="category-content">
+                    <h3>Marketing</h3>
+                    <p>Digital, Branding, Social</p>
+                    <span class="category-stats">800+ empleos</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="category-content">
+                    <h3>Finanzas</h3>
+                    <p>Contabilidad, Banca</p>
+                    <span class="category-stats">600+ empleos</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <div class="category-content">
+                    <h3>Diseño</h3>
+                    <p>UI/UX, Gráfico, Web</p>
+                    <span class="category-stats">450+ empleos</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="category-content">
+                    <h3>Ventas</h3>
+                    <p>B2B, B2C, Retail</p>
+                    <span class="category-stats">750+ empleos</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="category-content">
+                    <h3>Ingeniería</h3>
+                    <p>Civil, Mecánica</p>
+                    <span class="category-stats">500+ empleos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories-nav">
+            <button class="category-nav-button" id="prevCategory">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="category-nav-button" id="nextCategory">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>¿Por qué elegirnos?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Búsqueda Inteligente</h3>
+                    <p>Encuentra exactamente lo que buscas con nuestros filtros avanzados</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Proceso Rápido</h3>
+                    <p>Postulación simplificada y respuestas rápidas</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Empresas Verificadas</h3>
+                    <p>Trabajamos solo con empresas confiables y verificadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para dar el siguiente paso en tu carrera?</h2>
+                <p>Miles de oportunidades te esperan</p>
+                <div class="cta-buttons">
+                    <a href="pages/register.html" class="btn btn-primary btn-lg">Comenzar Ahora</a>
+                    <a href="pages/contact.html" class="btn btn-outline btn-lg">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>¿Listo para dar el siguiente paso en tu carrera?</h2>
+            <p>Miles de oportunidades te esperan. Únete a nuestra comunidad de profesionales.</p>
+            <div class="cta-buttons">
+                <a href="/register" class="btn btn-primary">
+                    Crear Cuenta Gratis
+                </a>
+                <a href="/contact" class="btn btn-outline">
+                    Contactar Ventas
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-company">
+                <a href="/" class="footer-logo">
+                    <img src="/assets/images/logo-white.svg" alt="Portal Empleos">
+                </a>
+                <p class="company-description">
+                    Conectamos el talento con las mejores oportunidades laborales. 
+                    Únete a nuestra comunidad de más de 50,000 profesionales y 5,000 empresas.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="newsletter">
+                    <h4>Recibe las mejores ofertas</h4>
+                    <form class="newsletter-form">
+                        <input type="email" 
+                               class="newsletter-input" 
+                               placeholder="Tu correo electrónico">
+                        <button type="submit" class="newsletter-button">
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Para Candidatos</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Buscar Empleos</a>
+                    <a href="#" class="footer-link">Crear CV</a>
+                    <a href="#" class="footer-link">Alertas de Empleo</a>
+                    <a href="#" class="footer-link">Blog de Carrera</a>
+                    <a href="#" class="footer-link">Consejos de Entrevista</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Para Empresas</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Publicar Empleos</a>
+                    <a href="#" class="footer-link">Buscar Candidatos</a>
+                    <a href="#" class="footer-link">Precios</a>
+                    <a href="#" class="footer-link">Recursos de RRHH</a>
+                    <a href="#" class="footer-link">Servicios Empresariales</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Compañía</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Sobre Nosotros</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                    <a href="#" class="footer-link">Soporte</a>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Prensa</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>© 2024 Portal Empleos. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Términos de Servicio</a>
+                    <a href="#" class="footer-bottom-link">Política de Privacidad</a>
+                    <a href="#" class="footer-bottom-link">Configuración de Cookies</a>
+                    <a href="#" class="footer-bottom-link">Accesibilidad</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

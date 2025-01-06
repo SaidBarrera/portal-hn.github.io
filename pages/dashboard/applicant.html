@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Solicitante - Portal de Empleos</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../../styles/components/reset.css">
+    <link rel="stylesheet" href="../../styles/components/variables.css">
+    <link rel="stylesheet" href="../../styles/components/typography.css">
+    <link rel="stylesheet" href="../../styles/components/buttons.css">
+    <link rel="stylesheet" href="../../styles/components/forms.css">
+    <link rel="stylesheet" href="../../styles/pages/dashboard.css">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    <img src="../../assets/images/logo.svg" alt="Portal Empleos">
+                </a>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="../../assets/images/default-avatar.png" alt="Avatar" id="userAvatar">
+                </div>
+                <div class="user-details">
+                    <h4 id="userName">Nombre del Solicitante</h4>
+                    <span id="userTitle">Título Profesional</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#overview" class="nav-link active" data-section="overview">
+                            <i class="fas fa-th-large"></i>
+                            <span>Vista General</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#search" class="nav-link" data-section="search">
+                            <i class="fas fa-search"></i>
+                            <span>Buscar Empleos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#applications" class="nav-link" data-section="applications">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Mis Postulaciones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#saved" class="nav-link" data-section="saved">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Empleos Guardados</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#profile" class="nav-link" data-section="profile">
+                            <i class="fas fa-user"></i>
+                            <span>Mi Perfil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messages" class="nav-link" data-section="messages">
+                            <i class="fas fa-envelope"></i>
+                            <span>Mensajes</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sidebar-footer">
+                    <a href="#settings" class="nav-link" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </a>
+                    <button id="logoutBtn" class="nav-link logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar Sesión</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar empleos...">
+                </div>
+
+                <div class="top-bar-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </button>
+                    <div class="quick-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-file-upload"></i>
+                            Actualizar CV
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Overview Section -->
+                <section id="overview" class="dashboard-section active">
+                    <div class="section-header">
+                        <h1>Vista General</h1>
+                    </div>
+
+                    <!-- Profile Completion -->
+                    <div class="profile-completion-card">
+                        <div class="completion-header">
+                            <h3>Completa tu perfil</h3>
+                            <div class="completion-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                                <span>75% completado</span>
+                            </div>
+                        </div>
+                        <div class="completion-tasks">
+                            <div class="task completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Información básica</span>
+                            </div>
+                            <div class="task completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>CV subido</span>
+                            </div>
+                            <div class="task">
+                                <i class="fas fa-circle"></i>
+                                <span>Añadir experiencia laboral</span>
+                            </div>
+                            <div class="task">
+                                <i class="fas fa-circle"></i>
+                                <span>Añadir habilidades</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Postulaciones Activas</h3>
+                                <p class="stat-value">8</p>
+                                <span class="stat-change">
+                                    3 nuevas esta semana
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Vistas de Perfil</h3>
+                                <p class="stat-value">24</p>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    30% más que la semana pasada
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Entrevistas Programadas</h3>
+                                <p class="stat-value">2</p>
+                                <span class="stat-change">
+                                    Próxima en 2 días
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-bookmark"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Empleos Guardados</h3>
+                                <p class="stat-value">15</p>
+                                <span class="stat-change">
+                                    5 coinciden con tu perfil
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Jobs -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Empleos Recomendados</h2>
+                            <button class="btn btn-text">Ver todos</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="jobs-grid" id="recommendedJobs">
+                                <!-- Los empleos se cargarán dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application Status -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Estado de Postulaciones</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="applications-timeline">
+                                <!-- Timeline items -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Job Search Section -->
+                <section id="search" class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Buscar Empleos</h2>
+                    </div>
+
+                    <div class="search-filters">
+                        <div class="filters-grid">
+                            <div class="filter-group">
+                                <input type="text" placeholder="Título o palabra clave">
+                            </div>
+                            <div class="filter-group">
+                                <select>
+                                    <option value="">Ubicación</option>
+                                    <option value="remote">Remoto</option>
+                                    <option value="onsite">Presencial</option>
+                                    <option value="hybrid">Híbrido</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <select>
+                                    <option value="">Tipo de Empleo</option>
+                                    <option value="full-time">Tiempo Completo</option>
+                                    <option value="part-time">Medio Tiempo</option>
+                                    <option value="contract">Contrato</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="search-results">
+                        <!-- Los resultados se cargarán dinámicamente -->
+                    </div>
+                </section>
+
+                <!-- Applications Section -->
+                <section id="applications" class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Mis Postulaciones</h2>
+                        <div class="section-actions">
+                            <select class="filter-select">
+                                <option value="all">Todas</option>
+                                <option value="pending">Pendientes</option>
+                                <option value="in-review">En Revisión</option>
+                                <option value="interview">Entrevista</option>
+                                <option value="rejected">No Seleccionado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="applications-list">
+                        <!-- Las postulaciones se cargarán dinámicamente -->
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile" class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Mi Perfil</h2>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-edit"></i>
+                            Editar Perfil
+                        </button>
+                    </div>
+
+                    <div class="profile-content">
+                        <!-- Profile information -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="jobDetailModal" class="modal">
+        <!-- Modal content -->
+    </div>
+
+    <div id="applicationModal" class="modal">
+        <!-- Modal content -->
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <script type="module" src="../../js/pages/applicant-dashboard.js"></script>
+</body>
+</html>

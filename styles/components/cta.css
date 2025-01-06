@@ -1,0 +1,103 @@
+/* CTA Section */
+.cta {
+    position: relative;
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(
+        135deg, 
+        var(--color-primary) 0%, 
+        var(--color-primary-dark) 100%
+    );
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+/* Patrón de fondo */
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        circle at 25% 25%,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%
+    );
+    opacity: 0.6;
+}
+
+.cta-content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cta h2 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.cta p {
+    font-size: var(--text-xl);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.cta .btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    min-width: 200px;
+}
+
+.cta .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.cta .btn-primary:hover {
+    background-color: var(--color-gray-100);
+}
+
+.cta .btn-outline {
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.cta .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cta {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .cta h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .cta p {
+        font-size: var(--text-lg);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta .btn {
+        width: 100%;
+    }
+}
