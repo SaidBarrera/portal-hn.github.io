@@ -1,5 +1,6 @@
 import { checkAuth, logout, getUserProfile } from '../utils/auth.js';
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // Verificar autenticación
     const user = checkAuth();

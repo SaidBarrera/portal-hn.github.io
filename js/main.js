@@ -1,6 +1,7 @@
 import { CONFIG } from './utils/config.js';
 import { handleLogin, logout } from './modules/auth.js';
 import { initializeTagSystem } from './modules/tags.js';
+
 import { 
     initializeEmployerDashboard, 
     handleNewJob, 

@@ -325,5 +325,22 @@
 </footer>
     <!-- Scripts -->
     <script type="module" src="js/main.js"></script>
+    <script type="module">
+        import { initializeJobsManagement } from '../../js/modules/jobs-management.js';
+        import { setupTagsInput } from '../../js/modules/tags.js';
+        import { exportJobs } from '../../js/modules/export.js';
+        import * as jobsAdditional from '../../js/modules/jobs-management-additional.js';
+    
+        // Hacer funciones disponibles globalmente
+        window.editJob = jobsAdditional.editJob;
+        window.deleteJob = jobsAdditional.deleteJob;
+        window.toggleJobStatus = jobsAdditional.toggleJobStatus;
+        window.exportJobs = exportJobs;
+    
+        // Inicializar cuando el documento esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeJobsManagement();
+        });
+    </script>
 </body>
 </html>
